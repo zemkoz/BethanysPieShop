@@ -8,8 +8,9 @@ public partial class EmployeeOverview : ComponentBase
 {
     private IList<Employee> Employees { get; set; } = default!;
     
-    protected override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
+        await Task.Delay(2000);
         Employees = MockDataService.Employees;
     }
 }
